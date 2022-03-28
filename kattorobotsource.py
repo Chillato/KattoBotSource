@@ -84,7 +84,7 @@ async def chatid(client, message):
 async def welcome(client, message):
     for user in message.new.chat_members:
         if user.is_self:
-            await client.send_message(kattoaggiunto)
+            await client.send_message(message.chat.id, kattoaggiunto)
         else:
             try:
                 await client.get_chat_member(message.from_user.id)
